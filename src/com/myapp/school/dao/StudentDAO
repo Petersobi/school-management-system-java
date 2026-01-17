@@ -1,0 +1,89 @@
+package com.myapp.school.dao;
+
+import com.myapp.school.db.DataBaseConnection;
+import com.myapp.school.model.Student;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class StudentDAO {
+    public List<Student> findAll() {
+        List<Student> students = new ArrayList<>();
+        String sql = """
+                SELECT id, first_name, last_name,class_name,
+                first_name || ' ' || last_name AS student_name
+                FROM students
+                """;
+
+        try (Connection conn = DataBaseConnection.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                Student student = new Student(
+                        rs.getInt("id"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("class_name")
+                );
+                student.setStudentName(rs.getString("student_name"));
+                students.add(student);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } return students;
+    }
+    public void save(Student student){
+        String sql = """
+                Insert INTO students (first_name,last_name,class_name)
+                VALUES (?, ?, ?)
+                """;
+        try (Connection conn = DataBaseConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.setString(1,student.getFirstName());
+            ps.setString(2,student.getLastName());
+            ps.setString(3, student.getClassName());
+
+            ps.executeUpdate();
+            ResultSet keys = ps.getGeneratedKeys();
+            if (keys.next()){
+                student.setID(keys.getInt(1));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void deleteByID(int id){
+        String sql = "DELETE FROM students WHERE id = ?";
+        try (Connection conn = DataBaseConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1,id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void update(Student student){
+        String sql = """
+                UPDATE students
+                SET first_name = ?, last_name = ?, class_name = ?
+                WHERE id = ?
+                """;
+        try (
+                Connection conn = DataBaseConnection.getConnection();
+                PreparedStatement ps = conn.prepareStatement(sql)
+                ){
+            ps.setString(1, student.getFirstName());
+            ps.setString(2,student.getLastName());
+            ps.setString(3,student.getClassName());
+            ps.setInt(4,student.getId());
+
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+}
