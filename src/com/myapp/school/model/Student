@@ -1,0 +1,65 @@
+package com.myapp.school.model;
+
+public class Student {
+    private int id;
+    private String firstName;
+    private String lastName;
+    private String studentName;
+    private String className;
+    private AttendanceStatus attendanceStatus;
+
+    public Student (String firstName,String lastName,String className){
+         this.firstName = firstName;this.lastName = lastName; this.className = className;
+    }
+    public Student ( int id ,String firstName,String lastName,String className){
+      this.id = id;  this.firstName = firstName;this.lastName = lastName; this.className = className;
+    }
+    public Student ( int id ,String firstName,String lastName,String studentName,String className){
+        this.id = id;  this.firstName = firstName;this.lastName = lastName; this.className = className;
+    }
+
+    public void setID(int id){this.id = id;}
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstName(){
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public String getClassName(){return className;}
+
+
+    public AttendanceStatus getAttendanceStatus(){
+        return attendanceStatus;
+    }
+
+    public void setAttendanceStatus(AttendanceStatus attendanceStatus) {
+        this.attendanceStatus = attendanceStatus;
+    }
+}
