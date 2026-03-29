@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.myapp.school.controller.StudentLayoutController"
+fx:id="rootPane">
+    <left>
+        <VBox spacing="15" styleClass="card">
+            <Button text="My Teachers" onAction="#handleMyTeachers"/>
+            <Button text="My Assignments" onAction="#handleMyAssignments"/>
+            <Button text="My Results" onAction="#handleMyResults"/>
+            <Button text="Logout" onAction="#handleLogOut"/>
+        </VBox>
+    </left>
+    <center>
+
+    </center>
+
+</BorderPane>

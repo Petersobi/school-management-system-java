@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.myapp.school.controller.StudentController"
+            >
+    <children>
+        <Label text="Students"
+               layoutX="20"
+               layoutY="20"/>
+        <TextField fx:id="searchField"
+                   layoutX="20"
+                   layoutY="40"
+                   />
+        <Label text="Search"
+               layoutX="170"
+               layoutY="40"
+               />
+        <TableView fx:id="studentTable"
+                   layoutX="20"
+                   layoutY="70"
+                   prefWidth="500"
+                   prefHeight="200">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="80"/>
+                    <TableColumn fx:id="firstNameColumn" text="First Name" sortable="true" prefWidth="120"/>
+                    <TableColumn fx:id="lastNameColumn" text="Last Name" sortable="true" prefWidth="120"/>
+                    <TableColumn fx:id="classColumn" text="Class" sortable="true" prefWidth="100"/>
+                </columns>
+        </TableView>
+
+        <Pagination fx:id="pagination"
+
+        />
+
+            <TextField
+                    fx:id="idField"
+                    promptText="ID"
+                    layoutX="20"
+                    layoutY="300"
+            />
+            <TextField
+                    fx:id="firstField"
+                    promptText="First Name"
+                    layoutX="20"
+                    layoutY="300"
+                    prefWidth="100"
+            />
+            <TextField
+                    fx:id="lastField"
+                    promptText="Last Name"
+                    layoutX="120"
+                    layoutY="300"
+                    prefWidth="100"
+            />
+            <ComboBox
+                    fx:id="comboBox"
+                    promptText="Select Class"
+                    layoutX="220"
+                    layoutY="300"
+                    prefWidth="100"
+                    editable="false"
+            />
+            <Button fx:id="addBtn"
+                    text="Add"
+                    layoutX="300"
+                    layoutY="300"
+                    onAction="#handleAddStudent"
+                />
+        <Button text="Update Student"
+                onAction="#handleUpdateStudent"
+                layoutX="350"
+                layoutY="300"
+                />
+        <Button fx:id="deleteBtn"
+                text="Delete Student"
+                layoutX="500"
+                layoutY="300"
+                onAction="#handleDeleteStudent"
+                />
+
+    </children>
+
+</AnchorPane>

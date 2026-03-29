@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.myapp.school.controller.AssignedTeachersController">
+    <center>
+        <VBox spacing="10" >
+            <Label text="Assigned Teachers"/>
+            <TableView fx:id="assignedTeachersTable">
+                <columns>
+                    <TableColumn fx:id="teacherFirstNameCol" text="First Name"/>
+                    <TableColumn fx:id="teacherLastNameCol" text="Last Name"/>
+                    <TableColumn fx:id="teacherSubjectCol" text="Class"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

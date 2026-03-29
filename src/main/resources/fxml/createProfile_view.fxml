@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.myapp.school.controller.CreateProfileController"
+            >
+    <fx:define>
+      <ToggleGroup fx:id="roleGroup"/>
+    </fx:define>
+
+    <center>
+    <VBox spacing="15" alignment="CENTER" maxWidth="400" styleClass="card">
+        <Label text="Create Profile" alignment="CENTER" styleClass="title"/>
+        <Label text="Set up your profile to continue" styleClass="subtitle"/>
+
+        <VBox spacing="5">
+            <Label text="Username"/>
+            <TextField fx:id="usernameField" promptText="Enter unique username"/>
+            <Label text="Text" fx:id="usernameErrorLabel" visible="false"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Password" />
+            <PasswordField fx:id="passwordField" promptText="Enter Password"/>
+            <Label text="Text"  visible="false"/>
+        </VBox>
+
+        <VBox>
+            <Label text="Confirm Password"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Re-enter Password"/>
+            <Label text="Text" fx:id="confirmPasswordErrorLabel" visible="false"/>
+        </VBox>
+
+        <VBox>
+            <Label text="Select Role"/>
+            <HBox spacing="5">
+
+                <RadioButton text="Admin" userData="ADMIN" toggleGroup="$roleGroup"/>
+                <RadioButton text="Teacher" userData="TEACHER" toggleGroup="$roleGroup"/>
+                <RadioButton text="Student" userData="STUDENT" toggleGroup="$roleGroup"/>
+            </HBox>
+        </VBox>
+
+        <Button text="CreateAccount" fx:id="createAccountBtn" onAction="#handleCreateAccount"/>
+        <Hyperlink text="Already have an account? Login" onAction="#gotoLogin"/>
+    </VBox>
+    </center>
+
+</BorderPane>

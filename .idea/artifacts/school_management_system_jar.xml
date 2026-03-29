@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="school-management-system:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/school_management_system_jar</output-path>
+    <root id="archive" name="school-management-system.jar">
+      <element id="module-output" name="school-management-system.main" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.xerial/sqlite-jdbc/3.45.1.0/7cd66c2793e4d9511f6da8fc6c621575171c2da1/sqlite-jdbc-3.45.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.36/6c62681a2f655b49963a5983b8b0950a6120ae14/slf4j-api-1.7.36.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/21/a7e334fbb619859e1010cad06ddcf16e774c87a0/javafx-base-21-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/21/76e295d84578a3d9688e092aae3f2ff1cf3e83a9/javafx-controls-21-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mindrot/jbcrypt/0.4/af7e61017f73abb18ac4e036954f9f28c6366c07/jbcrypt-0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.librepdf/openpdf/1.3.26/12127a140ba7652e9817ccee6eaec787728286ef/openpdf-1.3.26.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-fxml/21/4a1cd270e1ae03ae73110eb68622afd457c6f903/javafx-fxml-21-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/21/8083d97ea236079c82cf8e3463b62990340346d4/javafx-graphics-21-win.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

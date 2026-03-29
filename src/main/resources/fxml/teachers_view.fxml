@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.myapp.school.controller.TeacherController">
+    <top>
+        <TextField fx:id="searchField"
+                   promptText="search by name"
+                   BorderPane.alignment="CENTER"/>
+    </top>
+
+    <right>
+    <VBox spacing="10" >
+        <Label text="Assigned Students"/>
+        <TableView fx:id="assignedStudentsTable">
+            <columns>
+                <TableColumn fx:id="studentFirstNameCol" text="First Name"/>
+                <TableColumn fx:id="studentLastNameCol" text="Last Name"/>
+                <TableColumn fx:id="studentClassCol" text="Class"/>
+            </columns>
+        </TableView>
+
+        <ComboBox fx:id="studentComboBox" promptText="Select Student"/>
+
+        <HBox spacing="10">
+            <Button text="Assign" onAction="#handleAssignStudent"/>
+            <Button text="Remove" onAction="#handleRemoveStudent"/>
+        </HBox>
+    </VBox>
+    </right>
+
+    <center>
+        <TableView fx:id="teacherTable"
+                   >
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" />
+                <TableColumn fx:id="firstNameColumn" text="First Name" sortable="true" />
+                <TableColumn fx:id="lastNameColumn" text="Last Name" sortable="true" />
+                <TableColumn fx:id="subjectColumn" text="Subject" sortable="true" />
+            </columns>
+        </TableView>
+        <Pagination fx:id="pagination"
+        />
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="firstNameField" promptText="First Name"/>
+            <TextField fx:id="lastNameField" promptText="Last Name"/>
+            <ComboBox fx:id="subjectBox" promptText="Subject"/>
+
+            <Button text="Add" onAction="#handleAddTeacher"/>
+            <Button text="Delete" onAction="#handleDeleteTeacher"/>
+            <Button text="Update" onAction="#handleUpdateTeacher"/>
+        </HBox>
+    </bottom>
+
+
+</BorderPane>

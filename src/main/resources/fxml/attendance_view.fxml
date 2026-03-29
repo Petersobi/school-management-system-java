@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.myapp.school.controller.AttendanceController"
+            >
+
+    <top>
+        <Label text="Mark Attendance" style="-fx-font-size: 18;"/>
+    </top>
+
+    <center>
+        <TableView fx:id="studentTable">
+            <columns>
+                <TableColumn text="ID" fx:id="idCol"/>
+                <TableColumn text="Name" fx:id="nameCol"/>
+                <TableColumn text="Status" fx:id="statusCol"/>
+            </columns>
+
+        </TableView>
+    </center>
+
+    <bottom> <HBox>
+        <Button fx:id="saveBtn" text="Save Attendance" onAction="#handleSave"/>
+        <Button text="Attendance History" onAction="#handleAttendanceHistory"/>
+    </HBox>
+    </bottom>
+
+</BorderPane>

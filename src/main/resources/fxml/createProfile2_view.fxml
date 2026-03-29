@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.myapp.school.controller.CreateProfile2Controller"
+            >
+    <center>
+    <VBox alignment="CENTER" maxWidth="400" styleClass="card" spacing="10">
+        <StackPane>
+            <VBox fx:id="adminBox" visible="false" spacing="15">
+            <Label text="Complete Your Profile" alignment="CENTER" styleClass="Title"/>
+            <Label text="Create Administration Profile" styleClass="subtitle"/>
+            </VBox>
+            <VBox fx:id="studentBox" visible="false" spacing="15">
+            <Label text="Complete Your Profile" alignment="CENTER" styleClass="Title"/>
+            <Label text="Create Student Profile" styleClass="subtitle"/>
+            </VBox>
+
+            <VBox fx:id="teacherBox" visible="false" spacing="15">
+            <Label text="Complete Your Profile" alignment="CENTER" styleClass="Title"/>
+            <Label text="Create Teacher Profile" styleClass="subtitle"/>
+            </VBox>
+        </StackPane>
+                <VBox spacing="5">
+                    <VBox spacing="5">
+                        <Label text="Registration Token :"/>
+                        <TextField fx:id="tokenField" promptText="Input Token"/>
+                    </VBox>
+                    <Label text="First Name"/>
+                    <TextField fx:id="firstnameField" promptText="Input Firstname"/>
+                    <Label text="Last Name"/>
+                    <TextField fx:id="lastnameField" promptText="Input Lastname"/>
+
+                </VBox>
+        <StackPane>
+            <HBox fx:id="studentHBox" visible="false">
+                <Label text="Class :"/>
+                <ComboBox fx:id="chooseClass"/>
+            </HBox>
+
+            <HBox fx:id="teacherHBox" visible="false">
+                <Label text="Subject :"/>
+                <ComboBox fx:id="chooseSubject"/>
+            </HBox>
+        </StackPane>
+
+        <Button alignment="CENTER_RIGHT" text="Complete Profile" fx:id="completeProfileBtn" onAction="#handleCompleteProfile"/>
+    </VBox>
+    </center>
+
+</BorderPane>

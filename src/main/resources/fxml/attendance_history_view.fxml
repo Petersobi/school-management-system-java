@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.chart.PieChart?>
+<VBox
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.myapp.school.controller.AttendanceHistoryController"
+            spacing="10"
+            >
+    <HBox spacing="10">
+        <DatePicker fx:id="datePicker"/>
+        <Button text="Load Attendance" onAction="#handleLoad"/>
+    </HBox>
+
+    <HBox spacing="30">
+
+    <TableView fx:id="attendanceTable">
+        <columns>
+            <TableColumn fx:id="studentCol" text="Student"/>
+            <TableColumn fx:id="statusCol" text="Status"/>
+        </columns>
+
+    </TableView>
+        <PieChart fx:id="attendancePieChart"
+                  prefWidth="400"
+                  prefHeight="300"/>
+
+    </HBox>
+
+
+
+    <HBox spacing="10">
+        <Button text="Export to CSV" onAction="#handleExportCSV"/>
+        <Button text="Export to PDF" onAction="#handleExportPDF"/>
+    </HBox>
+    <HBox>
+        <ComboBox promptText="Select Student" fx:id="studentBox"/>
+        <Button text="Selected Student Summary" onAction="#handleSummary"/>
+    </HBox>
+    <HBox spacing="30">
+        <Label fx:id="totalLabel" styleClass="label-button"/>
+        <Label fx:id="presentLabel" styleClass="label-button"/>
+        <Label fx:id="absentLabel" styleClass="label-button"/>
+        <Label fx:id="percentLabel" styleClass="label-button"/>
+    </HBox>
+
+
+</VBox>
